@@ -22,9 +22,7 @@ router.get("/:id", async (req, res) => {
         message: "Project with that id does not exist."
       });
     } else {
-      res.status(200).json({
-        project
-      });
+      res.status(200).json({ project });
     }
   } catch (err) {
     res.status(404).json({
