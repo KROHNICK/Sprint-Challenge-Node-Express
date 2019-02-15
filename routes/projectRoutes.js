@@ -54,4 +54,26 @@ router.post("/", async (req, res) => {
   }
 });
 
+router.put("/:id", async (req, res) => {
+  if (!req.body.name || !req.body.description || !req.body.completed) {
+    res.status(400).json({
+      message: "Please provide name, description and completed."
+    });
+  }
+  try {
+    let newProjReq = {
+      name: req.body.name,
+      description: req.body.description,
+      completed: req.body.completed
+    };
+    let projId = await projectModel.get(req.params.id);
+    let newProj = await projectModel.update(req.params.id, newProjReq);
+    res.status(200).json({ newProj });
+  } catch (err) {
+    res.status(500).json({
+      message: "Could not update project."
+    });
+  }
+});
+
 module.exports = router;
