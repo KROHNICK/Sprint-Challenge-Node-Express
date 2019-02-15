@@ -6,12 +6,16 @@ const morgan = require("morgan");
 const cors = require("cors");
 
 const projectRoutes = require("./routes/projectRoutes");
+const actionRoutes = require("./routes/actionRoutes");
 
 server.use(express.json());
 server.use(helmet());
 server.use(morgan("dev"));
 server.use(cors());
+
 server.use("/api/projects", projectRoutes);
+server.use("/api/action", actionRoutes);
+
 // server.use("/", (req, res) => res.send("API up and running!"));
 
 server.get("/api", (req, res) => {
