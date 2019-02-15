@@ -38,7 +38,7 @@ Something we can manipulate with our API and we can also separate using differne
 
 - [x] What can the API return to help clients know if a request was successful?
 
-server.use('/', (req, res) => res.send('API is running'));
+A 200 code status.
 
 - [x] How can we partition our application into sub-applications?
 
@@ -48,16 +48,16 @@ Into separate client folder with react apps that use different route url of the 
 
 Follow these steps to set up and work on your project:
 
-- [ ] Create a forked copy of this project.
-- [ ] Add your _Project Manager_ as collaborator on Github.
-- [ ] Clone your forked version of the Repository.
-- [ ] Create a new Branch on the clone: git checkout -b `<firstName-lastName>`.
-- [ ] Implement the project on this Branch, committing changes regularly.
-- [ ] Push commits: git push origin `<firstName-lastName>`.
+- [x] Create a forked copy of this project.
+- [x] Add your _Project Manager_ as collaborator on Github.
+- [x] Clone your forked version of the Repository.
+- [x] Create a new Branch on the clone: git checkout -b `<firstName-lastName>`.
+- [x] Implement the project on this Branch, committing changes regularly.
+- [x] Push commits: git push origin `<firstName-lastName>`.
 
 Follow these steps for completing your project.
 
-- [ ] Submit a Pull-Request to merge <firstName-lastName> Branch into master on your fork. **Please don't merge your own pull request.**
+- [x] Submit a Pull-Request to merge <firstName-lastName> Branch into master on your fork. **Please don't merge your own pull request.**
 - [ ] Add your _Project Manager_ as a Reviewer on the Pull-request
 - [ ] Your _Project Manager_ will count the challenge as done by merging the branch into _master_.
 
