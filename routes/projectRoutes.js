@@ -34,16 +34,15 @@ router.get("/:id", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-  if (!req.body.name || !req.body.description || !req.body.completed) {
+  if (!req.body.name || !req.body.description) {
     res.status(400).json({
-      message: "Please provide name, description and completed."
+      message: "Please provide name and description."
     });
   }
   try {
     let newProjReq = {
       name: req.body.name,
-      description: req.body.description,
-      completed: req.body.completed
+      description: req.body.description
     };
     let newProj = await projectModel.insert(newProjReq);
     res.status(201).json({ newProj });
@@ -55,16 +54,15 @@ router.post("/", async (req, res) => {
 });
 
 router.put("/:id", async (req, res) => {
-  if (!req.body.name || !req.body.description || !req.body.completed) {
+  if (!req.body.name || !req.body.description) {
     res.status(400).json({
-      message: "Please provide name, description and completed."
+      message: "Please provide name and description."
     });
   }
   try {
     let newProjReq = {
       name: req.body.name,
-      description: req.body.description,
-      completed: req.body.completed
+      description: req.body.description
     };
     let projId = await projectModel.get(req.params.id);
     let newProj = await projectModel.update(req.params.id, newProjReq);
