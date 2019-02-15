@@ -82,4 +82,17 @@ router.put("/:id", async (req, res) => {
   }
 });
 
+router.delete("/:id", async (req, res) => {
+  try {
+    let newAct = await actionModel.remove(req.params.id);
+    res.status(200).json({
+      message: "Action deleted."
+    });
+  } catch (err) {
+    res.status(500).json({
+      message: "Could not delete action."
+    });
+  }
+});
+
 module.exports = router;
