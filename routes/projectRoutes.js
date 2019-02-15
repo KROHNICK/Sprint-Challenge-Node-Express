@@ -33,4 +33,25 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+router.post("/", async (req, res) => {
+  if (!req.body.name || !req.body.description || !req.body.completed) {
+    res.status(400).json({
+      message: "Please provide name, description and completed."
+    });
+  }
+  try {
+    let newProjReq = {
+      name: req.body.name,
+      description: req.body.description,
+      completed: req.body.completed
+    };
+    let newProj = await projectModel.insert(newProjReq);
+    res.status(201).json({ newProj });
+  } catch (err) {
+    res.status(500).json({
+      message: "Could not add new project."
+    });
+  }
+});
+
 module.exports = router;
