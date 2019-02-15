@@ -14,7 +14,7 @@ server.use(morgan("dev"));
 server.use(cors());
 
 server.use("/api/projects", projectRoutes);
-server.use("/api/action", actionRoutes);
+server.use("/api/actions", actionRoutes);
 
 // server.use("/", (req, res) => res.send("API up and running!"));
 
