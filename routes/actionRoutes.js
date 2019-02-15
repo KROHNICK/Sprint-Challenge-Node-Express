@@ -57,4 +57,29 @@ router.post("/", async (req, res) => {
   }
 });
 
+router.put("/:id", async (req, res) => {
+  if (!req.body.project_id || !req.body.description || !req.body.notes) {
+    res.status(400).json({
+      message: "Please provide project id, description and notes."
+    });
+  }
+  try {
+    let newActReq = {
+      project_id: req.body.project_id,
+      description: req.body.description,
+      notes: req.body.notes
+    };
+    if (req.body.completed) {
+      newActReq.completed = req.body.completed;
+    }
+    let actId = await actionModel.get(req.params.id);
+    let newAct = await actionModel.update(req.params.id, newActReq);
+    res.status(200).json({ newAct });
+  } catch (err) {
+    res.status(500).json({
+      message: "Could not update action."
+    });
+  }
+});
+
 module.exports = router;
