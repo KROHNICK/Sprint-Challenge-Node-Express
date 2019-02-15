@@ -26,13 +26,15 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] Mention two parts of Express that you learned about this week.
 
+Express allows us to build web applications using routing and helpers, and is compatible with connect middleware which add more features.
+
 - [ ] Describe Middleware?
 
-- [ ] Describe a Resource?
+* [ ] Describe a Resource?
 
 - [ ] What can the API return to help clients know if a request was successful?
 
-- [ ] How can we partition our application into sub-applications?
+* [ ] How can we partition our application into sub-applications?
 
 ## Project Setup
 
